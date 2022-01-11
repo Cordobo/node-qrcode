@@ -1,5 +1,5 @@
 {
-  "name": "qrcode",
+  "name": "@cordobo/qrcode",
   "description": "QRCode / 2d Barcode api with both server side and client side support using canvas",
   "version": "1.5.0",
   "author": "Ryan Day <soldair@gmail.com>",
@@ -31,6 +31,8 @@
     "pretest": "npm run lint",
     "test": "node --throw-deprecation test.js",
     "build": "rollup -c",
+    "reinstall": "rm -rf node_modules && npm install",
+    "release": "npm run reinstall && npm run build && npm publish --access public && cd ../../",
     "prepublish": "npm run build",
     "browser": "node examples/clientsideserver.js"
   },
@@ -41,7 +43,7 @@
     "dijkstrajs": "^1.0.1",
     "encode-utf8": "^1.0.3",
     "pngjs": "^5.0.0",
-    "yargs": "^15.3.1"
+    "yargs": "^17.3.1"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",
@@ -51,10 +53,10 @@
     "browserify": "^16.5.1",
     "canvas": "^2.8.0",
     "canvasutil": "0.0.4",
-    "colors": "^1.4.0",
-    "express": "^4.17.1",
+    "colors": "1.4.0",
+    "express": "4.17.2",
     "htmlparser2": "^4.1.0",
-    "rollup": "^2.6.1",
+    "rollup": "2.63.0",
     "rollup-plugin-babel": "^4.4.0",
     "rollup-plugin-terser": "^5.3.0",
     "sinon": "^9.0.2",
@@ -64,9 +66,6 @@
   "repository": {
     "type": "git",
     "url": "git://github.com/soldair/node-qrcode.git"
-  },
-  "engines": {
-    "node": ">=10.13.0"
   },
   "standard": {
     "ignore": [
